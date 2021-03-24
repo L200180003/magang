@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extra_config": {},
+  "timeout": "3000ms",
+  "cache_ttl": "300s",
+  "output_encoding": "json",
+  "name": "coba",
+  "port": 7878,
+  "endpoints": [
+    {
+      "endpoint": "/users/{id}",
+      "method": "GET",
+      "output_encoding": "json",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/users/{id}",
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET",
+          "extra_config": {},
+          "host": [
+            "jsonplaceholder.typicode.com/"
+          ],
+          "disable_host_sanitize": false
+        }
+      ]
+    }
+  ]
+}
